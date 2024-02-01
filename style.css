@@ -1,0 +1,46 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+.container {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 25px;
+}
+
+/* trunck structured */
+.container .trunck {
+  display: flex;
+  flex-direction: column;
+  border: 3px solid red;
+  height: 500px;
+  width: 500px;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  position: relative;
+}
+
+.container .trunck h2 {
+  position: absolute;
+  top: 0px;
+  left: 0;
+}
+
+.container .trunck div {
+  display: flex;
+  gap: 5px;
+  justify-content: baseline;
+}
+
+img {
+  width: 100px;
+}
+
+.container .trunck strong {
+  position: absolute;
+  bottom: 0px;
+}
