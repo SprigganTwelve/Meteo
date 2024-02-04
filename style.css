@@ -1,7 +1,14 @@
+@font-face {
+  font-family: Protest; /*  here the name depend on you  */
+  src: url(Protest_Riot/ProtestRiot-Regular.ttf);
+}
+
 * {
   padding: 0;
   margin: 0;
   font-size: 30px;
+  border: none;
+  outline: none;
 }
 
 .container {
@@ -11,6 +18,8 @@
   flex-direction: column;
   gap: 14px;
   height: 100vh;
+  font-family: Protest;
+  background: rgba(118, 187, 235, 255);
 }
 
 .container .paramter {
@@ -18,11 +27,26 @@
   gap: 20px;
   border: 2px solid red;
   flex-direction: column;
-  height: 500px;
-  width: 400px;
-  padding: 20px;
+  height: 550px;
+  width: 440px;
+  padding: 25px;
   position: relative;
   border-radius: 5px;
+  color: black;
+
+  /*background-color: #8ad5fb;*/
+
+  background: url(background\ image.jpg);
+  background-position: cover;
+  background-repeat: no-repeat;
+
+  /* From https://css.glass */
+
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 .container .paramter .options {
@@ -30,6 +54,23 @@
   flex-direction: column;
   gap: 5px;
   font-size: 25px;
+}
+
+.container .paramter .options select * {
+  background-color: #8ad5fb;
+}
+
+.container .paramter .options * {
+  /* background-color: #8ad5fb;*/
+  background: transparent;
+  font-family: Protest;
+}
+
+.container .paramter .options input {
+  text-align: center;
+  font-weight: bold;
+  font-size: 30px;
+  margin-bottom: 10px;
 }
 
 .container .paramter .General {
@@ -55,5 +96,14 @@ header {
   gap: 20px;
   position: absolute;
   bottom: 10px;
-  margin-left: 5px;
+  left: 2%;
+  border: none;
+}
+
+.container .paramter .details * {
+  background-color: rgba(0, 0, 0, 0.1);
+  margin: 10px;
+  padding: 5px;
+  text-align: center;
+  border-radius: 10px;
 }
