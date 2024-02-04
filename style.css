@@ -1,46 +1,59 @@
 * {
   padding: 0;
   margin: 0;
+  font-size: 30px;
 }
 
 .container {
-  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
+  gap: 14px;
+  height: 100vh;
+}
+
+.container .paramter {
+  display: flex;
+  gap: 20px;
+  border: 2px solid red;
+  flex-direction: column;
+  height: 500px;
+  width: 400px;
+  padding: 20px;
+  position: relative;
+  border-radius: 5px;
+}
+
+.container .paramter .options {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
   font-size: 25px;
 }
 
-/* trunck structured */
-.container .trunck {
+.container .paramter .General {
   display: flex;
-  flex-direction: column;
-  border: 3px solid red;
-  height: 500px;
-  width: 500px;
-  align-items: center;
-  justify-content: center;
+  justify-content: space-around;
+  object-position: center;
+  justify-self: center;
+}
+
+.container .paramter .General img {
+  height: 100px;
+}
+
+header {
+  position: absolute;
+  top: 50%;
+  left: 30%;
+  margin: 10px;
+}
+
+.container .paramter .details {
+  display: flex;
   gap: 20px;
-  position: relative;
-}
-
-.container .trunck h2 {
   position: absolute;
-  top: 0px;
-  left: 0;
-}
-
-.container .trunck div {
-  display: flex;
-  gap: 5px;
-  justify-content: baseline;
-}
-
-img {
-  width: 100px;
-}
-
-.container .trunck strong {
-  position: absolute;
-  bottom: 0px;
+  bottom: 10px;
+  margin-left: 5px;
 }

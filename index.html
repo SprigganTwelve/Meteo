@@ -3,20 +3,44 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
-    <title>Meteo</title>
+    <title>Weather</title>
   </head>
   <body>
     <div class="container">
-      <div class="trunck">
-        <h2>Days</h2>
-        <div>
-          <img src="ori_3588095_4iw4a7pi29xf7hlcdcyzo6tf0nhr95less9zx9yf_sun-icon.jpg" alt="sunimg" />
-          <span>34°</span>
+      <!-- options  -->
+      <div class="paramter">
+        <div class="options" title="choose one day">
+          <input value="USA" title="choose your country" />
+          <select id="Days">
+            <option value="">Days</option>
+            <option value="Monday">Monday</option>
+            <option value="Tuesday">Tuesday</option>
+            <option value="Wednesday">Wednesday</option>
+            <option value="Thursday">Thursday</option>
+            <option value="Friday">Friday</option>
+            <option value="Saturday">Saturday</option>
+            <option value="Sunday">Sunday</option>
+          </select>
         </div>
-        <strong
-          >Mostly sun<br />
-          Toute la journée
-        </strong>
+        <section class="General">
+          <img src="ori_3588095_4iw4a7pi29xf7hlcdcyzo6tf0nhr95less9zx9yf_sun-icon.jpg" alt="Icon" />
+          <p>
+            Degre :..<span id="Degre"></span> <br />
+            During :... <span id="During"></span>
+          </p>
+        </section>
+
+        <header>Description</header>
+
+        <div class="details">
+          <section>Pressure <br />123</section>
+          humidity<br />
+          4343
+          <section>
+            Visibility <br />
+            1324
+          </section>
+        </div>
       </div>
     </div>
   </body>
