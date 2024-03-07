@@ -6,12 +6,13 @@ var humidity = document.getElementById("humidity");
 var visibility = document.getElementById("visibility");
 var img = document.querySelector("img");
 var coord = {};
+const key = "a7a8d8a744ef7ea7908bc98841fa2bec";
 
 country.addEventListener("keydown", (e) => {
   if (e.key == "Enter") {
     var tab = country.value.split("/");
 
-    var geoUrl = "http://api.openweathermap.org/geo/1.0/direct?q=" + tab[0] + "&limit=5&appid=a7a8d8a744ef7ea7908bc98841fa2bec";
+    var geoUrl = "http://api.openweathermap.org/geo/1.0/direct?q=" + tab[0] + "&limit=5&appid=" + key;
 
     fetch(geoUrl)
       .then((response) => {
@@ -29,7 +30,7 @@ country.addEventListener("keydown", (e) => {
           }
         });
 
-        var weatherUrl = "https://api.openweathermap.org/data/2.5/weather?lat=" + coord.lat + "&lon=" + coord.lon + "&appid=a7a8d8a744ef7ea7908bc98841fa2bec";
+        var weatherUrl = "https://api.openweathermap.org/data/2.5/weather?lat=" + coord.lat + "&lon=" + coord.lon + "&appid=" + key;
 
         fetch(weatherUrl)
           .then((weatherResponse) => {
@@ -38,12 +39,15 @@ country.addEventListener("keydown", (e) => {
           .then((weatherData) => {
             console.log("Weather data : ", weatherData);
             console.log("html element: ", gobalWeather);
+
             visibility.innerHTML = `Visibility <br/> ${weatherData.visibility}`;
             pressure.innerHTML = `Pressure <br/> ${weatherData.main.pressure}`;
             humidity.innerHTML = `Humidity <br/> ${weatherData.main.humidity}`;
             gobalWeather[0].innerHTML = `${weatherData.weather[0].description}`;
-            gobalWeather[1].innerHTML = `${weatherData.wind.deg} °`;
+            gobalWeather[1].innerHTML = `${weatherData.wind.deg} °C`;
             gobalWeather[2].innerHTML = `${weatherData.main.temp} `;
+            const iconSrc = "https://openweathermap.org/img/wn/" + weatherData.weather[0].icon + ".png";
+            img.setAttribute("src", `${iconSrc}`);
           })
           .catch((weatherError) => {
             console.error("Erreur dans la deuxième fetch :", weatherError);
@@ -69,3 +73,37 @@ country.addEventListener("keydown", (e) => {
 // });
 
 //// api.openweathermap.org/data/2.5/forecast?lat={lat}&lon={lon}&appid={API key}
+
+if (navigator) {
+  navigator.geolocation.getCurrentPosition(showPosition, showError);
+} else {
+  alert("Votre navigateur ne supporte pas la géolocalistion");
+}
+
+function showPosition(position) {
+  const currentLat = position.coords.latitude;
+  const currentLon = position.coords.longitude;
+  let urlCurrentPos = "https://api.openweathermap.org/data/2.5/weather?lat=" + currentLat + "&lon=" + currentLon + "&appid=" + key;
+  console.log(urlCurrentPos);
+  getData(urlCurrentPos);
+}
+
+async function getData(url) {
+  try {
+    let promise = await axios.get(url);
+    console.log(promise);
+    visibility.innerHTML = `Visibility <br/> ${promise.data.visibility}`;
+    pressure.innerHTML = `Pressure <br/> ${Math.floor(promise.data.main.pressure)}`;
+    humidity.innerHTML = `Humidity <br/> ${Math.floor(promise.data.main.humidity)}`;
+    gobalWeather[0].innerHTML = `${promise.data.weather[0].main} , ${promise.data.weather[0].description}`;
+    gobalWeather[1].innerHTML = `${Math.floor(promise.data.wind.deg)} °C`;
+    gobalWeather[2].innerHTML = `${Math.floor(promise.data.main.temp)} `;
+
+    const iconSrc = "https://openweathermap.org/img/wn/" + promise.data.weather[0].icon + ".png";
+    img.setAttribute("src", `${iconSrc}`);
+  } catch {}
+}
+
+function showError(error) {
+  console.log("erreur : ", error);
+}
