@@ -1,0 +1,19 @@
+{
+  "name": "meteo",
+  "version": "1.0.0",
+  "description": "This app is designed to managed weather forcast information ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SprigganTwelve/Meteo.git"
+  },
+  "author": "Dali ange paterne",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SprigganTwelve/Meteo/issues"
+  },
+  "homepage": "https://github.com/SprigganTwelve/Meteo#readme"
+}
