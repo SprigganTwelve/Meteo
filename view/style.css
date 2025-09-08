@@ -1,0 +1,180 @@
+*{
+    margin: 0;
+    padding: 0;
+    
+}
+
+body{
+    height: 100vh;
+    width: 100vw;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url('./public/background/winter-4680354.jpg');
+}
+
+.background{
+    display: flex;
+    justify-content: center; 
+}
+
+.container{
+    gap: 10px;
+    width: 85vw;
+    height: 100vh;
+    display: flex;
+    overflow: hidden;
+}
+
+
+
+.container .mainPannel {
+    width: 23rem;
+    margin: 20px;
+    padding: 20px;
+    border-radius: 20px;
+
+}
+
+
+
+
+.container .mainPannel .todayWeather img{
+    width: 11rem;
+}
+
+
+
+.container .mainPannel .todayWeather .degree{
+    display: flex;
+    gap: 3rem;
+    justify-content: center;
+}
+
+
+.container .mainPannel .todayWeather .degree h2{
+    font-size: 55px;
+    font-weight: 700;
+    color: white;
+}
+
+
+.container  .mainPannel .todayWeather p{
+    padding: 20px 0px;
+    font-size: 17px;
+    color:white
+} 
+
+
+.container  .mainPannel .forcast{
+    display: flex;
+    flex-direction: column;
+}
+
+.container  .mainPannel .forcast div {
+    padding: 0;
+    display: flex;
+    color: white;
+    align-items:center;
+    justify-content:space-between;
+}
+
+
+
+.container  .mainPannel .forcast div .leading img  {
+    width: 3rem;
+    margin-right: 15px;
+}
+
+
+.container .mainPannel .forcast div > .leading span{
+    font-size: large;
+    font-weight: 700;
+}
+
+
+
+.container .board{
+    gap: 4rem;
+    width: 100%;
+    margin: 20px;
+    display: flex;
+    padding: 20px;
+    align-items: center;
+    flex-direction: column;
+    /* background-color: blue; */
+}
+
+
+.container .board .searchBar{
+    position: relative;
+}
+
+
+
+.container .board .searchBar input {
+    width: 36rem;
+    border: none;
+    outline: none;
+    font-size: 17px;
+    border-radius: 30px;
+    padding: 13px 50px 13px 50px;
+}
+
+
+.container .board .searchBar  #tempIcon{
+    width: 2rem;
+    left: 12px;
+    position: absolute;
+    transform: translateY(20%);
+}
+
+
+
+.container .board .searchBar #searchIcon {
+    right: 15px;
+    width: 2rem;
+    cursor: pointer;
+    position: absolute;
+    transform: translateY(20%);
+}
+
+
+
+.container .board .details {
+    gap: 30px;
+    width: 90%;
+    display: flex;
+    color: white;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+
+
+.container .board .details .item {
+    gap: 10px;
+    display: flex;
+    padding: 15px 35px;
+    border-radius: 20px;
+    align-items: center;
+    justify-content: center;
+}
+
+.container .board .details .item  img {
+    width: 4.5rem;
+}
+
+.container .board .details .item div {
+    gap: 5px;
+    display: flex;
+    flex-direction: column;
+}
+
+.glassEffect {
+        /* Glass effect */
+    background: rgba(255, 255, 255, 0.1);   /* fond translucide blanc */
+    backdrop-filter: blur(15px) ;               /* flou derrière le panneau */
+    -webkit-backdrop-filter: blur(10px);     /* support Safari */
+    border: 1px solid rgba(255, 255, 255, 0.3); /* bordure subtile pour effet glass */
+}
