@@ -1,12 +1,12 @@
 *{
     margin: 0;
     padding: 0;
-    
+    font-family: 'Poppins' sans-serif;
 }
 
 body{
-    height: 100vh;
     width: 100vw;
+    height: 100vh;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -19,7 +19,6 @@ body{
 }
 
 .container{
-    gap: 10px;
     width: 85vw;
     height: 100vh;
     display: flex;
@@ -33,9 +32,7 @@ body{
     margin: 20px;
     padding: 20px;
     border-radius: 20px;
-
 }
-
 
 
 
@@ -95,7 +92,7 @@ body{
 
 
 .container .board{
-    gap: 4rem;
+    gap: 1rem;
     width: 100%;
     margin: 20px;
     display: flex;
@@ -104,6 +101,7 @@ body{
     flex-direction: column;
     /* background-color: blue; */
 }
+
 
 
 .container .board .searchBar{
@@ -116,9 +114,16 @@ body{
     width: 36rem;
     border: none;
     outline: none;
+    color: white;
     font-size: 17px;
-    border-radius: 30px;
     padding: 13px 50px 13px 50px;
+    background-color: transparent;
+}
+
+
+
+.container .board .searchBar input::placeholder{
+    color: white;
 }
 
 
@@ -142,39 +147,62 @@ body{
 
 
 .container .board .details {
-    gap: 30px;
-    width: 90%;
-    display: flex;
+    width: 95%;
+    gap: 10px;
     color: white;
-    flex-wrap: wrap;
-    justify-content: flex-start;
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 150px);
 }
 
 
 
 .container .board .details .item {
-    gap: 10px;
+    gap: 30px;
     display: flex;
-    padding: 15px 35px;
-    border-radius: 20px;
     align-items: center;
-    justify-content: center;
+    padding: 10px 25px;
+    border-radius: 20px;
 }
+
 
 .container .board .details .item  img {
     width: 4.5rem;
 }
 
-.container .board .details .item div {
+
+
+.container .board .details .item .leading {
     gap: 5px;
     display: flex;
     flex-direction: column;
 }
 
+.container .board .details  .uvIndex {
+    grid-row: 1 / 3;
+    grid-column: 3 / 4;  
+}
+
+
+
+
+.container .board  .curve{
+    width: 95%;
+    flex-grow: 1;
+}
+
+
+
+/*--- global effect--- */
+
+
 .glassEffect {
+    overflow: hidden;
         /* Glass effect */
-    background: rgba(255, 255, 255, 0.1);   /* fond translucide blanc */
-    backdrop-filter: blur(15px) ;               /* flou derrière le panneau */
-    -webkit-backdrop-filter: blur(10px);     /* support Safari */
-    border: 1px solid rgba(255, 255, 255, 0.3); /* bordure subtile pour effet glass */
+    background: rgba(255, 255, 255, 0.1);   
+    backdrop-filter: blur(15px) ;             
+    -webkit-backdrop-filter: blur(10px);   
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 30px; 
 }
